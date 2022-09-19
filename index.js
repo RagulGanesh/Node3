@@ -61,7 +61,7 @@ const todoList = () => {
       // ..
       // return OUTPUT_STRING
       var OUTPUT_STRING='';
-      for(var i=0;i<list.length;i++){
+      for(var i=0;i<list.length-1;i++){
         if(list[i].dueDate!='2022-09-19'){
             OUTPUT_STRING=OUTPUT_STRING+'[ ] '+list[i].title+' '+list[i].dueDate+'\n';
         }
@@ -76,6 +76,19 @@ const todoList = () => {
         
         
       }
+
+    if(list[i].dueDate!='2022-09-19'){
+        OUTPUT_STRING=OUTPUT_STRING+'[ ] '+list[i].title+' '+list[i].dueDate;
+    }
+    else{
+        if(list[i].completed!=true){
+            OUTPUT_STRING=OUTPUT_STRING+'[ ] '+list[i].title+' ';
+        }
+        else{
+            OUTPUT_STRING=OUTPUT_STRING+'[x] '+list[i].title+' ';
+        }
+    }
+
       return OUTPUT_STRING;
  }
   
